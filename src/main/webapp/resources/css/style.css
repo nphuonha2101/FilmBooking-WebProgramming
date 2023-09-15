@@ -31,6 +31,8 @@ body {
     align-items: center;
     justify-content: center;
     border-bottom: 1px #FFDBCA solid;
+    z-index: 999;
+    background-color: #201A17;
 }
 
 .top-nav > ul {
@@ -156,3 +158,16 @@ h2 {
 a {
     font-weight: 500;
 }
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background: #201A17;
+}
+::-webkit-scrollbar-thumb {
+    background: #FF7F2D;
+    border-radius: 50px;
+}
+
