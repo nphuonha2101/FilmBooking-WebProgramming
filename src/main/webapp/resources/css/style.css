@@ -1,3 +1,158 @@
 root {
-    
+    --primary-color: #FF7F2D;
+    --secondary-color: #AC8978;
+    --tertiary-color: #97925F;
+    --neutral-color: #998F8A;
+    --text-color: #FFDBCA;
+    --background-color: #201A17;
+    --container-color: #2B221D;
+    --filled-button-color: #5C4132;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    color: #FFDBCA;
+}
+
+body {
+    margin: 4rem 2rem 1rem 2rem;
+    background-color: #201A17;
+}
+
+/* Top navigation bar */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px #FFDBCA solid;
+}
+
+.top-nav > ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav > ul > li {
+    margin: 0 2rem;
+}
+
+.top-nav > ul > li > a {
+    font-weight: 400;
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+
+/* Button */
+.button {
+    padding: 0.25rem 1rem;
+    transition: 0.2s ease-out;
+}
+
+.button:hover {
+    letter-spacing: 2px;
+}
+
+.nav-button {
+    color: #FF7F2D;
+    border-radius: 100px;
+}
+
+.nav-button:hover {
+    color: #FFDBCA;
+    background-color: #5C4132;
+    border-radius: 100px;
+    transition: 0.3s ease-out;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.filled-button {
+    background-color: #5C4132;
+    color: #FFDBCA;
+}
+
+/* Container */
+.container {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #2B221D;
+    border-radius: 1.875rem;
+    padding: 2rem
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form */
+form {
+    width: calc(40vw);
+    height: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+}
+
+input {
+    font-size: 1rem;
+    position: relative;
+    border-radius: 0.5rem;
+    height: 3rem;
+    color: #FFDBCA;
+    margin: 0.5rem 0;
+    transition: 0.2s ease-out;
+}
+
+/*input[type="text"], input[type="password"], input[type="email"] {*/
+input:not([type="submit"]) {
+    padding: 0 1.5rem;
+    background-color: #201A17 !important;
+    border: 2px #FFDBCA solid;
+}
+
+/*input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {*/
+input:not([type="submit"]):focus {
+    outline: none;
+    border: 2px #FF7F2D solid;
+    transition: 0.3s ease-out;
+}
+
+
+input[type="submit"] {
+    border: none;
+}
+
+/* headings */
+h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+a {
+    font-weight: 500;
 }
