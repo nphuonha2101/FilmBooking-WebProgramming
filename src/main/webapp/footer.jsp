@@ -37,4 +37,5 @@ expand_less</span>
     <%@include file="resources/js/handlesBackToTop.js"%>
     <%@include file="resources/js/handlesSlideShow.js"%>
     <%@include file="resources/js/handlesTab.js"%>
+    <%@include file="resources/js/handlesShowModal.js"%>
 </script>
