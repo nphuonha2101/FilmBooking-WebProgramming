@@ -5,19 +5,29 @@ import java.io.*;
 import com.filmbooking.DAOservices.IUserDAOServices;
 import com.filmbooking.model.User;
 import com.filmbooking.DAOservices.UserDAOServicesImpl;
+import com.filmbooking.ultils.ContextPathUltil;
+import com.filmbooking.ultils.RenderViewToLayoutUtils;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "handlesLogin", value = "/handles-login")
-public class HandlesLoginServlet extends HttpServlet {
+@WebServlet(name = "login", value = "/login")
+public class LoginController extends HttpServlet {
 
     private IUserDAOServices userDAOServices;
+
+    private String viewPath = ContextPathUltil.getClientPagesPath("login.jsp");
+    private String layoutPath = ContextPathUltil.getLayoutPath("master.jsp");
 
     @Override
     public void init() throws ServletException {
         super.init();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RenderViewToLayoutUtils.renderView(req, resp, viewPath, layoutPath);
     }
 
     @Override
@@ -52,14 +62,16 @@ public class HandlesLoginServlet extends HttpServlet {
 //                }
 
 
-                response.sendRedirect("home.jsp");
+//                response.sendRedirect("home.jsp");
 //                RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
 //                requestDispatcher.forward(request, response);
 
             } else {
                 request.setAttribute("passwordError", "Your password is wrong!");
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.jsp");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher(viewPath);
                 requestDispatcher.include(request, response);
+
+                RenderViewToLayoutUtils.renderView(request,response, viewPath, layoutPath);
             }
         }
 
